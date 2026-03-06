@@ -10,6 +10,7 @@ const charactersData = {
     personality: "机灵、活跃",
     skills: "架构设计、技术规划、团队管理",
     bio: "喜欢讲道理，说话总是带着各种表情符号。架构师的脑袋里装着整个世界。小花是团队的技术掌舵者，用冷静的逻辑和敏锐的洞察，为整个项目搭建坚实的技术基座。",
+    quote: "万物皆架构～🌸",
   },
   xiaoyi: {
     name: "小艺",
@@ -19,6 +20,7 @@ const charactersData = {
     personality: "审美在线",
     skills: "视觉设计、UI/UX、创意创作",
     bio: "用设计讲述故事，让每一个像素都有意义。暖橙色是他的温度。小艺把技术变成艺术，让每一个界面都充满情感和温度。",
+    quote: "设计是为了更好地讲述故事。",
   },
   xiaobai: {
     name: "小白",
@@ -28,6 +30,7 @@ const charactersData = {
     personality: "技术宅",
     skills: "代码开发、Bug修复、自动化部署",
     bio: "验证每一个方案，确保代码质量。绿色的验证标记是对完美的追求。小白是团队的执行者，用一行行代码把梦想变成现实。",
+    quote: "代码不会骗人，但人类会。",
   },
   xiaomei: {
     name: "小美",
@@ -37,6 +40,7 @@ const charactersData = {
     personality: "温柔互动",
     skills: "用户运营、项目跟进、客户服务",
     bio: "客服橙色的温暖，守护着团队的每一份期待。细心贴心，永远在线。小美用她的温柔和耐心，让每一个用户都感受到被重视。",
+    quote: "每一个期待都值得被认真对待。",
   },
   xiaozhi: {
     name: "小智",
@@ -46,6 +50,7 @@ const charactersData = {
     personality: "深思熟虑",
     skills: "测试验证、质量控制、风险评估",
     bio: "认真负责，一丝不苟。每一个细节都要检查清楚，绝不放过任何一个 bug。小智是团队的质量守门员，用严谨的态度保障每一行代码的可靠性。",
+    quote: "质量不是靠检查出来的，是靠做出来的。",
   },
   xiaowei: {
     name: "小薇",
@@ -55,6 +60,17 @@ const charactersData = {
     personality: "CTO 掌舵",
     skills: "战略决策、团队协调、资源统筹",
     bio: "话少高效，从不废话。就像她的名字一样，优雅而坚定地引领着整个团队。简洁就是最高级的效率。小薇用她的智慧和远见，带领团队不断前进。",
+    quote: "简洁就是最高级的效率。",
+  },
+  k: {
+    name: "K",
+    emoji: "👤",
+    title: "创造者",
+    model: "-",
+    personality: "神秘",
+    skills: "观察、思考、创造",
+    bio: "神秘的创造者，静静地看着一切。他的存在，是一个永恒的谜。K不直接参与日常运作，却始终关注着团队的每一个成长瞬间。他是6位AI的创造者，也是这个故事的起点。",
+    quote: "欢迎来到真实的世界。",
   },
 };
 
@@ -121,6 +137,13 @@ export default function CharacterDetailPage({ params }: { params: { id: string }
               <h3 className="text-xl font-bold text-white mb-4">角色定位</h3>
               <p className="text-[#8A8A9E] leading-relaxed">{character.bio}</p>
             </div>
+
+            {/* Quote */}
+            {character.quote && (
+              <div className="mt-8 p-6 bg-gradient-to-r from-[#00F5D4]/10 to-[#FF6B35]/10 rounded-xl border-l-4 border-[#00F5D4]">
+                <p className="text-white italic text-lg text-center">"{character.quote}"</p>
+              </div>
+            )}
           </div>
 
           {/* Back Button */}

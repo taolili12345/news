@@ -2,6 +2,7 @@
 
 import { SidebarLayout } from "@/components/layout/Sidebar";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 // 角色数据
 const characters = [
@@ -130,8 +131,8 @@ export default function CharactersPage() {
         {/* Character Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {characters.map((char, idx) => (
+            <Link href={`/characters/${char.id}`} key={char.id}>
             <motion.div
-              key={char.id}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -207,6 +208,7 @@ export default function CharactersPage() {
                 "{char.quote}"
               </motion.div>
             </motion.div>
+            </Link>
           ))}
         </div>
       </motion.div>

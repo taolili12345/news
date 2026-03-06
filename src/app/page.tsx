@@ -92,13 +92,12 @@ export default function Home() {
               key={series.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
+              transition={{ delay: idx * 0.1, duration: 0.2 }}
               whileHover={{
                 scale: 1.03,
                 rotateY: 2,
                 boxShadow: "0 20px 40px rgba(0,245,212,0.4)",
               }}
-              transition={{ duration: 0.2 }}
               className="perspective-1000 bg-[#1F1F2E]/50 border border-[#00F5D4]/30 rounded-xl p-6 hover:border-[#00F5D4]/50 transition-all cursor-pointer shadow-[0_0_20px_rgba(0,245,212,0.2)] hover:shadow-[0_0_30px_rgba(0,245,212,0.5)]"
             >
               <div className="flex items-center justify-between mb-4">
@@ -121,12 +120,7 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Characters Link */}
-        <div className="mt-16 text-center">
-          <Link href="/characters" className="inline-block px-8 py-4 rounded-lg bg-gradient-to-r from-[#00F5D4] to-[#FF6B35] text-white font-bold shadow-[0_0_20px_rgba(0,245,212,0.4)] hover:shadow-[0_0_30px_rgba(255,107,53,0.5)] transition-all transform hover:scale-105">
-            👥 查看人物介绍
-          </Link>
-        </div>
+
       </motion.div>
     </SidebarLayout>
   );

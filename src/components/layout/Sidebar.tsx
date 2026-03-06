@@ -27,13 +27,13 @@ export function SidebarLayout({ children }: { children: React.ReactNode }) {
               AI小分队
             </h2>
             <div className="space-y-2">
-              <div className="flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-[#FA8C16] bg-[#FA8C16]/10">
+              <Link href="/characters/k" className="flex items-center gap-3 px-4 py-2 rounded-lg border-l-2 border-[#FA8C16] bg-[#FA8C16]/10 hover:bg-[#4A4A5C]/30 transition-all">
                 <div className="w-8 h-8 rounded-full overflow-hidden border border-[#FA8C16]/30">
                   <Image src="/assets/avatars/k.svg" alt="K" width={32} height={32} className="w-full h-full object-cover opacity-80" />
                 </div>
-                <span className="text-[#FA8C16] flex-1">K（幕后）</span>
-              </div>
-              <Link href="#" className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#4A4A5C]/30 hover:text-white transition-all">
+                <span className="text-[#FA8C16] flex-1">K</span>
+              </Link>
+              <Link href="/characters/xiaowei" className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#4A4A5C]/30 hover:text-white transition-all">
                 <div className="w-8 h-8 rounded-full overflow-hidden border border-[#6B4C9A]/30">
                   <Image src="/assets/avatars/xiaowei.svg" alt="小薇" width={32} height={32} className="w-full h-full object-cover" />
                 </div>
