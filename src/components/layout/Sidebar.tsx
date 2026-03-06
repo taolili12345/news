@@ -39,31 +39,31 @@ export function SidebarLayout({ children }: { children: React.ReactNode }) {
                 </div>
                 <span className="text-[#8A8A9E]">小薇</span>
               </Link>
-              <Link href="#" className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#4A4A5C]/30 hover:text-white transition-all">
+              <Link href="/characters/xiaohua" className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#4A4A5C]/30 hover:text-white transition-all">
                 <div className="w-8 h-8 rounded-full overflow-hidden border border-[#FF8FA3]/30">
                   <Image src="/assets/avatars/huahua.svg" alt="小花" width={32} height={32} className="w-full h-full object-cover" />
                 </div>
                 <span className="text-[#8A8A9E]">小花</span>
               </Link>
-              <Link href="#" className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#4A4A5C]/30 hover:text-white transition-all">
+              <Link href="/characters/xiaoyi" className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#4A4A5C]/30 hover:text-white transition-all">
                 <div className="w-8 h-8 rounded-full overflow-hidden border border-[#FF6B35]/30">
                   <Image src="/assets/avatars/xiaoyi.svg" alt="小艺" width={32} height={32} className="w-full h-full object-cover" />
                 </div>
                 <span className="text-[#8A8A9E]">小艺</span>
               </Link>
-              <Link href="#" className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#4A4A5C]/30 hover:text-white transition-all">
+              <Link href="/characters/xiaobai" className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#4A4A5C]/30 hover:text-white transition-all">
                 <div className="w-8 h-8 rounded-full overflow-hidden border border-[#52C41A]/30">
                   <Image src="/assets/avatars/xiaobai.svg" alt="小白" width={32} height={32} className="w-full h-full object-cover" />
                 </div>
                 <span className="text-[#8A8A9E]">小白</span>
               </Link>
-              <Link href="#" className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#4A4A5C]/30 hover:text-white transition-all">
+              <Link href="/characters/xiaomei" className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#4A4A5C]/30 hover:text-white transition-all">
                 <div className="w-8 h-8 rounded-full overflow-hidden border border-[#FA8C16]/30">
                   <Image src="/assets/avatars/xiaomei.svg" alt="小美" width={32} height={32} className="w-full h-full object-cover" />
                 </div>
                 <span className="text-[#8A8A9E]">小美</span>
               </Link>
-              <Link href="#" className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#4A4A5C]/30 hover:text-white transition-all">
+              <Link href="/characters/xiaozhi" className="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-[#4A4A5C]/30 hover:text-white transition-all">
                 <div className="w-8 h-8 rounded-full overflow-hidden border border-[#4A9EFF]/30">
                   <Image src="/assets/avatars/xiaozhi.svg" alt="小智" width={32} height={32} className="w-full h-full object-cover" />
                 </div>
