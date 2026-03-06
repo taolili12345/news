@@ -98,8 +98,8 @@ export default async function ChapterPage({ params }: { params: { series: string
               className="whitespace-pre-wrap text-[#FFFFFF] text-lg leading-relaxed"
               dangerouslySetInnerHTML={{
                 __html: chapter.content
-                  // 标题：# 标题文字 -> <h2>标题文字</h2>
-                  .replace(/^#\s+(.+)$/gm, '<h2 class="text-2xl font-bold mb-6 text-[#00F5D4] mt-8">$1</h2>')
+                  // 移除 md 标题（已由页面 header 渲染）
+                  .replace(/^#\s+(.+)$/gm, '<!-- $1 -->')
                   // 加粗：**文字** -> <strong>文字</strong>
                   .replace(/\*\*(.+?)\*\*/g, '<strong class="text-[#FF6B35]">$1</strong>')
                   // 斜体：*文字* -> <em>文字</em>

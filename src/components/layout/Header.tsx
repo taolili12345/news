@@ -28,7 +28,7 @@ export default function Header() {
         <motion.div
           initial={false}
           animate={{ height: "auto", opacity: 1 }}
-          className="fixed top-16 right-0 w-full md:hidden bg-[#1F1F2E]/95 border-b border-[#00F5D4]/20 z-30 overflow-hidden shadow-[0_0_20px_rgba(0,245,212,0.2)]"
+          className="fixed top-16 right-0 w-full md:hidden bg-[#1F1F2E]/95 border-b border-[#00F5D4]/20 z-41 overflow-hidden shadow-[0_0_20px_rgba(0,245,212,0.2)]"
         >
           <div className="p-4 space-y-4">
             <Link href="/" className="block text-[#8A8A9E]">首页</Link>
