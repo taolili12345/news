@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- 小美 - 客服 - 客服橙 #FA8C16 - 圆角矩形 -->
+  <defs>
+    <linearGradient id="xiaomei-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FA8C16;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D46B08;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 圆角矩形背景 -->
+  <rect x="10" y="15" width="80" height="70" rx="15" ry="15" fill="url(#xiaomei-bg)"/>
+  
+  <!-- 对话气泡图标 -->
+  <g fill="white" opacity="0.95">
+    <path d="M25,35 L75,35 L75,60 L55,60 L50,70 L45,60 L25,60 Z"/>
+  </g>
+  
+  <!-- 光晕效果 -->
+  <rect x="8" y="13" width="84" height="74" rx="17" ry="17" fill="none" stroke="#FA8C16" stroke-width="2" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+  </rect>
+</svg>

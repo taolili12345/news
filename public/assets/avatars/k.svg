@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- K - 创造者 - 灰色 #8A8A9E - 光环 -->
+  <defs>
+    <linearGradient id="k-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8A8A9E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6B6B80;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="k-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#8A8A9E;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- 光环背景 -->
+  <circle cx="50" cy="50" r="45" fill="url(#k-bg)" opacity="0.8"/>
+  
+  <!-- 发光效果 -->
+  <circle cx="50" cy="50" r="40" fill="url(#k-glow)"/>
+  
+  <!-- K 字母 -->
+  <g fill="white" opacity="0.95">
+    <text x="50" y="60" font-family="Arial, sans-serif" font-size="45" text-anchor="middle" font-weight="bold">K</text>
+  </g>
+  
+  <!-- 外圈光环动画 -->
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.3">
+    <animate attributeName="r" values="45;50;45" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- 小智 - Builder - 代码蓝 #4A9EFF - 正方形 -->
+  <defs>
+    <linearGradient id="xiaozhi-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A9EFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E7DD1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 正方形背景 -->
+  <rect x="10" y="10" width="80" height="80" rx="8" fill="url(#xiaozhi-bg)"/>
+  
+  <!-- 代码图标 -->
+  <g fill="white" opacity="0.95">
+    <text x="50" y="62" font-family="Arial, sans-serif" font-size="40" text-anchor="middle" font-weight="bold">&lt;/&gt;</text>
+  </g>
+  
+  <!-- 光晕效果 -->
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#4A9EFF" stroke-width="2" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* =====================
+   k-story 视觉设计规范
+   基于小艺设计 v1.0
+   ===================== */
+
+:root {
+  /* 主色调 */
+  --primary-bg: #1A1A2E;
+  --accent-orange: #FF6B35;
+  --accent-cyan: #00F5D4;
+
+  /* 角色代表色 */
+  --role-xiaozhi: #4A9EFF;
+  --role-xiaowei: #6B4C9A;
+  --role-xiaohua: #FF8FA3;
+  --role-xiaobai: #52C41A;
+  --role-xiaomei: #FA8C16;
+  --role-xiaoyi: #FF6B35;
+  --role-k: #8A8A9E;
+  --role-unknown: rgba(255, 0, 0, 0.5);
+
+  /* 布局 */
+  --sidebar-width: 200px;
+  --raw-record-width: 300px;
+
+  /* 默认背景 */
+  --background: var(--primary-bg);
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  /* 主色调 */
+  --color-primary-bg: #1A1A2E;
+  --color-accent-orange: #FF6B35;
+  --color-accent-cyan: #00F5D4;
+
+  /* 角色色 */
+  --color-xiaozhi: #4A9EFF;
+  --color-xiaowei: #6B4C9A;
+  --color-xiaohua: #FF8FA3;
+  --color-xiaobai: #52C41A;
+  --color-xiaomei: #FA8C16;
+  --color-xiaoyi: #FF6B35;
+  --color-k: #8A8A9E;
+  --color-unknown: rgba(255, 0, 0, 0.5);
+
+  /* 布局尺寸 */
+  --spacing-sidebar: 200px;
+  --spacing-raw-record: 300px;
+
+  /* 字体 */
+  --font-sans: 'Source Han Sans', 'Source Han Sans SC', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* 字号 */
+  --font-size-body: 16px;
+  --font-size-body-mobile: 18px;
+
+  /* 动画 */
+  --animate-timeline-flow: timelineFlow 8s linear infinite;
+  --animate-fade-in: fadeIn 300ms ease-out;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 时间线光效动画 */
+@keyframes timelineFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 页面过渡 */
+.page-transition {
+  animation: fadeIn 300ms ease-out;
+}
+
+/* 时间线光效 */
+.timeline-glow {
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  background-size: 200% 100%;
+  animation: timelineFlow 8s linear infinite;
+}
+
+/* 基础样式 */
+body {
+  background: var(--primary-bg);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+}
+
+/* 移动端字体调整 */
+@media (max-width: 768px) {
+  body {
+    font-size: var(--font-size-body-mobile);
+  }
+}
+
+/* 代码字体 */
+code, pre {
+  font-family: var(--font-mono);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-cyan);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-orange);
+}
+
+/* 进度条流动光效动画 */
+@keyframes progressFlow {
+  0% { background-position: 200% 50%; }
+  100% { background-position: -200% 50%; }
+}
+
+/* 页面过渡淡入 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}

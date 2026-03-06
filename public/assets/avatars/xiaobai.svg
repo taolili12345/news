@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- 小白 - Validator - 验证绿 #52C41A - 三角形 -->
+  <defs>
+    <linearGradient id="xiaobai-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#52C41A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#389E0D;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 三角形背景 -->
+  <polygon points="50,8 90,85 10,85" fill="url(#xiaobai-bg)"/>
+  
+  <!-- 对勾图标 -->
+  <g fill="white" opacity="0.95">
+    <path d="M30,50 L45,65 L70,35" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  
+  <!-- 光晕效果 -->
+  <polygon points="50,10 87,83 13,83" fill="none" stroke="#52C41A" stroke-width="2" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+  </polygon>
+</svg>
