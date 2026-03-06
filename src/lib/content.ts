@@ -21,7 +21,9 @@ export async function getChapterList() {
       
       if (cnMatch) {
         // 中文数字转换
-        const cn = cnMatch[0].match(/[一二三四五六七八九十百]+/)[0];
+        const cnMatch2 = cnMatch[0].match(/[一二三四五六七八九十百]+/);
+        if (!cnMatch2) continue;
+        const cn = cnMatch2[0];
         const cnMap: Record<string, number> = {
           '一':1,'二':2,'三':3,'四':4,'五':5,'六':6,'七':7,'八':8,'九':9,'十':10
         };
