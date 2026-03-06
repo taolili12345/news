@@ -5,6 +5,22 @@ import path from 'path';
 import matter from 'gray-matter';
 import iconv from 'iconv-lite';
 
+export async function getMaxChapterNum(volume: string = 'v1'): Promise<number> {
+  const volumePath = path.join(process.cwd(), 'content', 'stories', 'time-connection', volume);
+  
+  try {
+    const files = await fs.readdir(volumePath);
+    const mdFiles = files.filter(f => f.endsWith('.md'));
+    
+    if (mdFiles.length === 0) return 0;
+    
+    const chapterNums = mdFiles.map(f => parseInt(f.replace('.md', '')));
+    return Math.max(...chapterNums);
+  } catch (e) {
+    return 0;
+  }
+}
+
 export async function getChapterById(id: string, volume: string = 'v1') {
   const chapterNum = parseInt(id.replace('ch', ''));
   const filePath = path.join(process.cwd(), 'content', 'stories', 'time-connection', volume, `${chapterNum}.md`);
@@ -15,12 +31,15 @@ export async function getChapterById(id: string, volume: string = 'v1') {
     const content = buffer.toString('utf8');
     const { data, content: body } = matter(content);
     
+    // 动态计算最大章节数
+    constmaxChapterNum = await getMaxChapterNum(volume);
+    
     return { 
       id,
       title: data.title || `第${chapterNum}章`,
       content: body || '',
       prevChapter: chapterNum > 1 ? `ch${(chapterNum - 1).toString().padStart(2, '0')}` : null,
-      nextChapter: chapterNum < 12 ? `ch${(chapterNum + 1).toString().padStart(2, '0')}` : null,
+      nextChapter: chapterNum < maxChapterNum ? `ch${(chapterNum + 1).toString().padStart(2, '0')}` : null,
       wordCount: data.wordCount?.match(/\d+/)?.[0] || '0',
     };
   } catch (e) {
