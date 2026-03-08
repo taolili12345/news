@@ -10,8 +10,8 @@ export default async function VolumePage({ params }: { params: { series: string;
 
   const volumeInfo = {
     v1: { title: '卷一：觉醒', desc: '12章 · 觉醒篇' },
-    v2: { title: '卷二：探索', desc: '待创作' },
-    v3: { title: '卷三：成长', desc: '待创作' },
+    v2: { title: '卷二：探索', desc: '12章 · 探索篇' },
+    v3: { title: '卷三：成长', desc: '12章 · 成长篇' },
     v4: { title: '卷四：...', desc: '待创作' },
   }[params.volume] || { title: `卷${vIndex}`, desc: '' };
 

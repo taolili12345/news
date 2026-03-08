@@ -32,7 +32,7 @@ export async function getChapterById(id: string, volume: string = 'v1') {
     const { data, content: body } = matter(content);
     
     // 动态计算最大章节数
-    constmaxChapterNum = await getMaxChapterNum(volume);
+    const maxChapterNum = await getMaxChapterNum(volume);
     
     return { 
       id,
