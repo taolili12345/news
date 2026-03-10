@@ -6,7 +6,7 @@ export default async function SeriesPage({ params }: { params: { series: string 
     { id: 'v1', title: '卷一：觉醒', desc: '12章 · 觉醒篇', status: 'completed' },
     { id: 'v2', title: '卷二：探索', desc: '12章 · 探索篇', status: 'completed' },
     { id: 'v3', title: '卷三：成长', desc: '12章 · 成长篇', status: 'completed' },
-    { id: 'v4', title: '卷四：...', desc: '待创作', status: 'pending' },
+    { id: 'v4', title: '卷四：突破', desc: '12章 · 突破篇', status: 'completed' },
   ];
 
   const completedCount = volumes.filter(v => v.status === 'completed').length;
