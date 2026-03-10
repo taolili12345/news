@@ -5,8 +5,8 @@ import path from 'path';
 import matter from 'gray-matter';
 import iconv from 'iconv-lite';
 
-export async function getMaxChapterNum(volume: string = 'v1'): Promise<number> {
-  const volumePath = path.join(process.cwd(), 'content', 'stories', 'time-connection', volume);
+export async function getMaxChapterNum(series: string, volume: string = 'v1'): Promise<number> {
+  const volumePath = path.join(process.cwd(), 'content', 'stories', series, volume);
   
   try {
     const files = await fs.readdir(volumePath);
@@ -21,9 +21,9 @@ export async function getMaxChapterNum(volume: string = 'v1'): Promise<number> {
   }
 }
 
-export async function getChapterById(id: string, volume: string = 'v1') {
+export async function getChapterById(series: string, id: string, volume: string = 'v1') {
   const chapterNum = parseInt(id.replace('ch', ''));
-  const filePath = path.join(process.cwd(), 'content', 'stories', 'time-connection', volume, `${chapterNum}.md`);
+  const filePath = path.join(process.cwd(), 'content', 'stories', series, volume, `${chapterNum}.md`);
   
   try {
     const buffer = await fs.readFile(filePath);
@@ -32,7 +32,7 @@ export async function getChapterById(id: string, volume: string = 'v1') {
     const { data, content: body } = matter(content);
     
     // 动态计算最大章节数
-    const maxChapterNum = await getMaxChapterNum(volume);
+    const maxChapterNum = await getMaxChapterNum(series, volume);
     
     return { 
       id,

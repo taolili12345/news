@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 const CommentSection = dynamic(() => import("@/components/CommentSection"), { ssr: false });
 
 export default async function ChapterPage({ params }: { params: { series: string; volume: string; chapter: string } }) {
-  const chapter = await getChapterById(params.chapter, params.volume);
+  const chapter = await getChapterById(params.series, params.chapter, params.volume);
   const seriesChapters = Array.from({ length: 12 }, (_, i) => ({
     id: `ch${(i + 1).toString().padStart(2, '0')}`,
     title: `第${i + 1}章`,
