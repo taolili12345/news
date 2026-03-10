@@ -84,8 +84,8 @@ export default function Home() {
         {/* Series Cards with科技感 */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {[
-            { id: "time-connection", title: "时间连线", chapters: 2, desc: "跨越时空的故事连结" },
-            { id: "series-2", title: "系列二（预留）", chapters: 0, desc: "更多故事即将开启" },
+            { id: "time-connection", title: "时间连线", chapters: 4, desc: "跨越时空的故事连结" },
+            { id: "jie-wu-bian-jie", title: "界无边界", chapters: 4, desc: "打破界限的终极挑战" },
             { id: "series-3", title: "系列三（预留）", chapters: 0, desc: "未来待创作" },
           ].map((series, idx) => (
             <motion.div
