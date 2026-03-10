@@ -86,7 +86,7 @@ export default function Home() {
           {[
             { id: "time-connection", title: "时间连线", chapters: 4, desc: "跨越时空的故事连结" },
             { id: "jie-wu-bian-jie", title: "界无边界", chapters: 4, desc: "打破界限的终极挑战" },
-            { id: "series-3", title: "系列三（预留）", chapters: 0, desc: "未来待创作" },
+            { id: "bian-jie-zhi-wai", title: "边界之外", chapters: 4, desc: "突破边界的史诗篇章" },
           ].map((series, idx) => (
             <motion.div
               key={series.id}
