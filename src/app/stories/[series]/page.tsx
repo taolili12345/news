@@ -1,17 +1,45 @@
 import { SidebarLayout } from "@/components/layout/Sidebar";
+import { promises as fs } from "fs";
+import path from "path";
 import Link from "next/link";
 
+const seriesNames: Record<string, string> = {
+  "time-connection": "时间连线",
+  "jie-wu-bian-jie": "界无边界",
+};
+
 export default async function SeriesPage({ params }: { params: { series: string } }) {
-  const volumes = [
-    { id: 'v1', title: '卷一：觉醒', desc: '12章 · 觉醒篇', status: 'completed' },
-    { id: 'v2', title: '卷二：探索', desc: '12章 · 探索篇', status: 'completed' },
-    { id: 'v3', title: '卷三：成长', desc: '12章 · 成长篇', status: 'completed' },
-    { id: 'v4', title: '卷四：突破', desc: '12章 · 突破篇', status: 'completed' },
-  ];
+  const seriesId = params.series;
+  const storiesPath = path.join(process.cwd(), "content", "stories", seriesId);
+  
+  let volumes: { id: string; title: string; desc: string; status: string }[] = [];
+  
+  try {
+    const dirs = await fs.readdir(storiesPath, { withFileTypes: true });
+    const volDirs = dirs.filter(d => d.isDirectory()).map(d => d.name).sort();
+    
+    const volumeTitles: Record<string, Record<string, string>> = {
+      "time-connection": { v1: "卷一：觉醒", v2: "卷二：探索", v3: "卷三：成长", v4: "卷四：突破" },
+      "jie-wu-bian-jie": { v1: "卷一：新篇", v2: "卷二：觉醒", v3: "卷三：蜕变", v4: "卷四：升华" },
+    };
+    
+    volumes = volDirs.map(vol => {
+      const titleMap = volumeTitles[seriesId] || {};
+      return {
+        id: vol,
+        title: titleMap[vol] || vol.toUpperCase(),
+        desc: "12章 · 开启阅读",
+        status: "completed",
+      };
+    });
+  } catch (e) {
+    volumes = [];
+  }
 
   const completedCount = volumes.filter(v => v.status === 'completed').length;
   const totalCount = volumes.length;
-  const progress = (completedCount / totalCount) * 100;
+  const progress = totalCount > 0 ? (completedCount / totalCount) * 100 : 0;
+  const seriesName = seriesNames[seriesId] || seriesId;
 
   return (
     <SidebarLayout>
@@ -27,7 +55,7 @@ export default async function SeriesPage({ params }: { params: { series: string 
           {/* Header */}
           <header className="mb-12 max-w-3xl mx-auto text-center">
             <h1 className="text-3xl md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-[#00F5D4] via-white to-[#00F5D4] bg-clip-text text-transparent">
-              时间连线
+              {seriesName}
             </h1>
             <p className="text-center text-[#8A8A9E]">
               {completedCount} / {totalCount} 卷已完成
