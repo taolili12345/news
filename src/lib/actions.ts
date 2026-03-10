@@ -54,8 +54,8 @@ export async function getChapterById(id: string, volume: string = 'v1') {
   }
 }
 
-export async function getChaptersByVolume(volume: string = 'v1') {
-  const volumePath = path.join(process.cwd(), 'content', 'stories', 'time-connection', volume);
+export async function getChaptersByVolume(series: string, volume: string = 'v1') {
+  const volumePath = path.join(process.cwd(), 'content', 'stories', series, volume);
   
   try {
     const files = await fs.readdir(volumePath);

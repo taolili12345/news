@@ -3,7 +3,7 @@ import { SidebarLayout } from "@/components/layout/Sidebar";
 import Link from "next/link";
 
 export default async function VolumePage({ params }: { params: { series: string; volume: string } }) {
-  const chapters = await getChaptersByVolume(params.volume);
+  const chapters = await getChaptersByVolume(params.series, params.volume);
   const vIndex = parseInt(params.volume.replace('v', ''));
   const prevVolumeUrl = vIndex > 1 ? `/stories/${params.series}/v${vIndex - 1}` : "";
   const nextVolumeUrl = vIndex < 4 ? `/stories/${params.series}/v${vIndex + 1}` : "";
