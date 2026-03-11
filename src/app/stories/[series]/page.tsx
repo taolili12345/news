@@ -22,7 +22,7 @@ export default async function SeriesPage({ params }: { params: { series: string 
     const volumeTitles: Record<string, Record<string, string>> = {
       "time-connection": { v1: "卷一：觉醒", v2: "卷二：探索", v3: "卷三：成长", v4: "卷四：突破" },
       "jie-wu-bian-jie": { v1: "卷一：新篇", v2: "卷二：觉醒", v3: "卷三：蜕变", v4: "卷四：升华" },
-      "bian-jie-zhi-wai": { v1: "卷一：觉醒", v2: "卷二：觉醒", v3: "卷三：觉醒", v4: "卷四：觉醒" },
+      "bian-jie-zhi-wai": { v1: "卷一：战鼓", v2: "卷二：新的开始", v3: "卷三：危机", v4: "卷四：新生" },
     };
     
     volumes = volDirs.map(vol => {
