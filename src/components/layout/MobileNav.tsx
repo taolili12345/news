@@ -50,11 +50,11 @@ export function MobileNav() {
             <Link href="/stories/time-connection" className="block text-accent">
               时间连线
             </Link>
-            <Link href="/stories/series-2" className="block text-neutral-light opacity-50">
-              系列二（预留）
+            <Link href="/stories/jie-wu-bian-jie" className="block text-neutral-light">
+              界无边界
             </Link>
-            <Link href="/stories/series-3" className="block text-neutral-light opacity-50">
-              系列三（预留）
+            <Link href="/stories/bian-jie-zhi-wai" className="block text-neutral-light">
+              边界之外
             </Link>
             <div className="pt-4 border-t border-glow/20">
               <Link href="/characters/xiaoyi" className="block text-accent mb-2">

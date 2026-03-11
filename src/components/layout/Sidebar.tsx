@@ -21,6 +21,12 @@ export function SidebarLayout({ children }: { children: React.ReactNode }) {
             <Link href="/stories/time-connection" className="block px-4 py-2 rounded-lg text-[#FF6B35] bg-[#FF6B35]/10 hover:text-white transition-all">
               时间连线
             </Link>
+            <Link href="/stories/jie-wu-bian-jie" className="block px-4 py-2 rounded-lg text-[#8A8A9E] hover:bg-[#4A4A5C]/50 hover:text-white transition-all">
+              界无边界
+            </Link>
+            <Link href="/stories/bian-jie-zhi-wai" className="block px-4 py-2 rounded-lg text-[#8A8A9E] hover:bg-[#4A4A5C]/50 hover:text-white transition-all">
+              边界之外
+            </Link>
           </nav>
           <div className="pt-6 border-t border-[#00F5D4]/20">
             <h2 className="text-sm font-bold text-[#8A8A9E] mb-3 uppercase tracking-wider">

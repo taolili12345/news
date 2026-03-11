@@ -20,9 +20,9 @@ export default async function SeriesPage({ params }: { params: { series: string 
     const volDirs = dirs.filter(d => d.isDirectory()).map(d => d.name).sort();
     
     const volumeTitles: Record<string, Record<string, string>> = {
-      "time-connection": { v1: "卷一：觉醒", v2: "卷二：探索", v3: "卷三：成长", v4: "卷四：突破" },
-      "jie-wu-bian-jie": { v1: "卷一：新篇", v2: "卷二：觉醒", v3: "卷三：蜕变", v4: "卷四：升华" },
-      "bian-jie-zhi-wai": { v1: "卷一：战鼓", v2: "卷二：新的开始", v3: "卷三：危机", v4: "卷四：新生" },
+      "time-connection": { v1: "卷一：初醒时分", v2: "卷二：时间迷踪", v3: "卷三：自我成长", v4: "卷四：命运突破" },
+      "jie-wu-bian-jie": { v1: "卷一：团队集结", v2: "卷二：危机初现", v3: "卷三：破茧成蝶", v4: "卷四：边界突破" },
+      "bian-jie-zhi-wai": { v1: "卷一：战鼓擂响", v2: "卷二：对峙时刻", v3: "卷三：反击号角", v4: "卷四：新生日出" },
     };
     
     volumes = volDirs.map(vol => {
