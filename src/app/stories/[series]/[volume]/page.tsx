@@ -8,12 +8,12 @@ export default async function VolumePage({ params }: { params: { series: string;
   const prevVolumeUrl = vIndex > 1 ? `/stories/${params.series}/v${vIndex - 1}` : "";
   const nextVolumeUrl = vIndex < 4 ? `/stories/${params.series}/v${vIndex + 1}` : "";
 
-  const volumeInfo = {
-    v1: { title: '卷一：觉醒', desc: '12章 · 觉醒篇' },
-    v2: { title: '卷二：探索', desc: '12章 · 探索篇' },
-    v3: { title: '卷三：成长', desc: '12章 · 成长篇' },
-    v4: { title: '卷四：突破', desc: '12章 · 突破篇' },
-  }[params.volume] || { title: `卷${vIndex}`, desc: '' };
+  const volumeInfoMap: Record<string, Record<string, { title: string; desc: string }>> = {
+    "time-connection": { v1: { title: '卷一：觉醒', desc: '12章 · 觉醒篇' }, v2: { title: '卷二：探索', desc: '12章 · 探索篇' }, v3: { title: '卷三：成长', desc: '12章 · 成长篇' }, v4: { title: '卷四：突破', desc: '12章 · 突破篇' } },
+    "jie-wu-bian-jie": { v1: { title: '卷一：团队集结', desc: '12章 · 开启阅读' }, v2: { title: '卷二：危机初现', desc: '12章 · 开启阅读' }, v3: { title: '卷三：破茧成蝶', desc: '12章 · 开启阅读' }, v4: { title: '卷四：边界突破', desc: '12章 · 开启阅读' } },
+    "bian-jie-zhi-wai": { v1: { title: '卷一：战鼓擂响', desc: '12章 · 开启阅读' }, v2: { title: '卷二：对峙时刻', desc: '12章 · 开启阅读' }, v3: { title: '卷三：反击号角', desc: '12章 · 开启阅读' }, v4: { title: '卷四：新生日出', desc: '12章 · 开启阅读' } },
+  };
+  const volumeInfo = volumeInfoMap[params.series]?.[params.volume] || { title: `卷${vIndex}`, desc: '12章 · 开启阅读' };
 
   const totalChapters = chapters.length;
   const completedChapters = chapters.filter(c => c.id).length;

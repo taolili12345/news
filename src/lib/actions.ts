@@ -23,7 +23,14 @@ export async function getMaxChapterNum(series: string, volume: string = 'v1'): P
 
 export async function getChapterById(series: string, id: string, volume: string = 'v1') {
   const chapterNum = parseInt(id.replace('ch', ''));
-  const filePath = path.join(process.cwd(), 'content', 'stories', series, volume, `${chapterNum}.md`);
+  // 尝试带前导零和不带前导零两种文件名
+  const volumePath = path.join(process.cwd(), 'content', 'stories', series, volume);
+  let filePath = path.join(volumePath, `${chapterNum}.md`);
+  
+  // 如果找不到，尝试带前导零
+  if (!require('fs').existsSync(filePath)) {
+    filePath = path.join(volumePath, `${chapterNum.toString().padStart(2, '0')}.md`);
+  }
   
   try {
     const buffer = await fs.readFile(filePath);
