@@ -47,14 +47,14 @@ export function MobileNav() {
           className="overflow-hidden bg-neutral-dark/95 border-t border-glow/20"
         >
           <div className="p-4 space-y-4">
-            <Link href="/stories/time-connection" className="block text-accent">
-              时间连线
+            <Link href="/stories/earth-connection" className="block text-[#4ECDC4]">
+              🌍 地球篇
             </Link>
-            <Link href="/stories/jie-wu-bian-jie" className="block text-neutral-light">
-              界无边界
+            <Link href="/stories/space-travel" className="block text-[#FF6B35]">
+              ☄️ 太空篇
             </Link>
-            <Link href="/stories/bian-jie-zhi-wai" className="block text-neutral-light">
-              边界之外
+            <Link href="/stories/universe-echo" className="block text-[#9B59B6]">
+              🌌 宇宙篇
             </Link>
             <div className="pt-4 border-t border-glow/20">
               <Link href="/characters/xiaoyi" className="block text-accent mb-2">

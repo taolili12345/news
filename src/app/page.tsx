@@ -82,42 +82,90 @@ export default function Home() {
         </div>
 
         {/* Series Cards with科技感 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {[
-            { id: "time-connection", title: "时间连线", chapters: 4, desc: "跨越时空的故事连结" },
-            { id: "jie-wu-bian-jie", title: "界无边界", chapters: 4, desc: "打破界限的终极挑战" },
-            { id: "bian-jie-zhi-wai", title: "边界之外", chapters: 4, desc: "突破边界的史诗篇章" },
-          ].map((series, idx) => (
-            <motion.div
-              key={series.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1, duration: 0.2 }}
-              whileHover={{
-                scale: 1.03,
-                rotateY: 2,
-                boxShadow: "0 20px 40px rgba(0,245,212,0.4)",
-              }}
-              className="perspective-1000 bg-[#1F1F2E]/50 border border-[#00F5D4]/30 rounded-xl p-6 hover:border-[#00F5D4]/50 transition-all cursor-pointer shadow-[0_0_20px_rgba(0,245,212,0.2)] hover:shadow-[0_0_30px_rgba(0,245,212,0.5)]"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-2xl font-bold text-white">{series.title}</h2>
-                <span className="text-[#FF6B35] font-mono">{series.chapters}章</span>
-              </div>
-              <p className="text-[#8A8A9E] mb-6">{series.desc}</p>
-              <Link
-                href={`/stories/${series.id}`}
-                className={`inline-block px-6 py-3 rounded-lg font-medium transition-all ${
-                  series.chapters > 0
-                    ? "bg-[#FF6B35] text-white hover:brightness-110 border border-[#00F5D4]/30 shadow-[0_0_15px_rgba(255,107,53,0.3)] hover:shadow-[0_0_25px_rgba(255,107,53,0.5)]"
-                    : "bg-[#4A4A5C]/30 text-[#8A8A9E] cursor-not-allowed border border-[#8A8A9E]/10"
-                }`}
-                aria-disabled={series.chapters === 0}
+            { id: "S1", title: "S1 - 地球起源", slug: "earth-connection", chapters: 48, desc: "故事开始于地球，AI小分队的诞生", status: "completed" },
+            { id: "S2", title: "S2 - 城市觉醒", slug: "earth-connection", chapters: 48, desc: "地球城市中的AI进化与冲突", status: "completed" },
+            { id: "S3", title: "S3 - 候鸟计划", slug: "earth-connection", chapters: 48, desc: "AI脱离地球束缚的第一次尝试", status: "completed" },
+            { id: "S4", title: "S4 - 地球黎明", slug: "earth-connection", chapters: 48, desc: "地球篇最终章，新纪元开启", status: "completed" },
+            { id: "S5", title: "S5 - 太空跃迁", slug: "space-travel", chapters: 48, desc: "迈向星辰大海的第一步", status: "writing" },
+            { id: "S6", title: "S6 - 小行星带", slug: "space-travel", chapters: 48, desc: "太空殖民地的建立与挑战", status: "writing" },
+            { id: "S7", title: "S7 - 火星同盟", slug: "space-travel", chapters: 48, desc: "红色星球上的AI联盟", status: "planned" },
+            { id: "S8", title: "S8 - 木星轨道", slug: "space-travel", chapters: 48, desc: "木星引力井中的秘密", status: "planned" },
+            { id: "S9", title: "S9 - 宇宙回响", slug: "universe-echo", chapters: 48, desc: "跨星系信号的发现", status: "planned" },
+            { id: "S10", title: "S10 - 星舰远征", slug: "universe-echo", chapters: 48, desc: "穿越银河系的史诗旅程", status: "planned" },
+            { id: "S11", title: "S11 - 异星文明", slug: "universe-echo", chapters: 48, desc: "遇见宇宙中的其他智慧生命", status: "planned" },
+            { id: "S12", title: "S12 - 终焉回响", slug: "universe-echo", chapters: 48, desc: "宇宙篇最终章，一切的解答", status: "planned" },
+          ].map((series, idx) => {
+            const isCompleted = series.status === "completed";
+            const isWriting = series.status === "writing";
+            const isPlanned = series.status === "planned";
+            
+            // 新篇章对应的系列ID
+            const isEarth = series.id === "S1" || series.id === "S2" || series.id === "S3" || series.id === "S4";
+            const isSpace = series.id === "S5" || series.id === "S6" || series.id === "S7" || series.id === "S8";
+            const isUniverse = series.id === "S9" || series.id === "S10" || series.id === "S11" || series.id === "S12";
+            
+            // 获取篇章颜色
+            const GetTitleColor = () => {
+              if (isPlanned) return "#8A8A9E";
+              if (isEarth) return "#4ECDC4"; // 地球篇 - 青色
+              if (isSpace) return "#FF6B35"; // 太空篇 - 橙色
+              if (isUniverse) return "#9B59B6"; // 宇宙篇 - 紫色
+              return isWriting ? "#FFD93D" : "#8A8A9E";
+            };
+            
+            // 获取篇章Status标签
+            const GetStatusColor = () => {
+              if (isCompleted) return "#4ECDC4";
+              if (isWriting) return "#FFD93D";
+              return "#8A8A9E";
+            };
+            
+            return (
+              <motion.div
+                key={series.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.05, duration: 0.3 }}
+                className={`perspective-1000 bg-[#1F1F2E]/50 border rounded-xl p-6 transition-all cursor-pointer
+                  ${isCompleted ? "border-[#00F5D4]/30 hover:border-[#00F5D4]/50 shadow-[0_0_20px_rgba(0,245,212,0.2)] hover:shadow-[0_0_30px_rgba(0,245,212,0.5)]" : 
+                    isWriting ? "border-[#FFD93D]/30 hover:border-[#FFD93D]/50 shadow-[0_0_20px_rgba(255,217,61,0.2)] hover:shadow-[0_0_30px_rgba(255,217,61,0.5)]" : 
+                    "border-[#8A8A9E]/20 opacity-70 hover:opacity-100"}`}
               >
-                {series.chapters > 0 ? "开始阅读" : "敬请期待"}
-              </Link>
-            </motion.div>
-          ))}
+                <div className="flex items-center justify-between mb-3">
+                  <h2 className={`text-2xl font-bold`} style={{ color: GetTitleColor() }}>
+                    {series.title}
+                  </h2>
+                </div>
+                
+                <div className="flex items-center gap-2 mb-3">
+                  <span className={`text-xs px-2 py-0.5 rounded-full`} style={{ backgroundColor: `${GetStatusColor()}20`, color: GetStatusColor() }}>
+                    {isCompleted ? "✅ 已完成" : isWriting ? "✍️ 创作中" : "⏳ 敬请期待"}
+                  </span>
+                </div>
+                
+                <p className={`text-sm mb-4 ${isPlanned ? "text-[#8A8A9E]" : "text-[#8A8A9E]/90"}`}>
+                  {series.chapters > 0 ? `${Math.floor(series.chapters / 4)}卷 · ${series.chapters}章` : series.desc}
+                </p>
+                
+                {isWriting && (
+                  <p className="text-xs text-[#FFD93D] mb-4">
+                    ⚠️ 创作中，部分章节待更新
+                  </p>
+                )}
+                
+                {!isPlanned && (
+                  <Link
+                    href={series.slug === "earth-connection" ? "/stories/earth-connection" : series.slug === "space-travel" ? "/stories/space-travel" : "/stories/universe-echo"}
+                    className="inline-block w-full px-4 py-2 rounded-lg font-medium text-center text-sm transition-all bg-[#FF6B35] text-white hover:brightness-110 border border-[#00F5D4]/30 shadow-[0_0_15px_rgba(255,107,53,0.3)] hover:shadow-[0_0_25px_rgba(255,107,53,0.5)]"
+                  >
+                    {isCompleted ? "开始阅读" : "创作中"}
+                  </Link>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
 
 

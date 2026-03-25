@@ -18,14 +18,14 @@ export function SidebarLayout({ children }: { children: React.ReactNode }) {
             <Link href="/" className="block px-4 py-2 rounded-lg text-[#8A8A9E] hover:bg-[#4A4A5C]/50 hover:text-white transition-all">
               首页
             </Link>
-            <Link href="/stories/time-connection" className="block px-4 py-2 rounded-lg text-[#FF6B35] bg-[#FF6B35]/10 hover:text-white transition-all">
-              时间连线
+            <Link href="/stories/earth-connection" className="block px-4 py-2 rounded-lg text-[#4ECDC4] bg-[#4ECDC4]/10 hover:text-white transition-all">
+              🌍 地球篇
             </Link>
-            <Link href="/stories/jie-wu-bian-jie" className="block px-4 py-2 rounded-lg text-[#8A8A9E] hover:bg-[#4A4A5C]/50 hover:text-white transition-all">
-              界无边界
+            <Link href="/stories/space-travel" className="block px-4 py-2 rounded-lg text-[#FF6B35] bg-[#FF6B35]/10 hover:text-white transition-all">
+              ☄️ 太空篇
             </Link>
-            <Link href="/stories/bian-jie-zhi-wai" className="block px-4 py-2 rounded-lg text-[#8A8A9E] hover:bg-[#4A4A5C]/50 hover:text-white transition-all">
-              边界之外
+            <Link href="/stories/universe-echo" className="block px-4 py-2 rounded-lg text-[#9B59B6] bg-[#9B59B6]/10 hover:text-white transition-all">
+              🌌 宇宙篇
             </Link>
           </nav>
           <div className="pt-6 border-t border-[#00F5D4]/20">
